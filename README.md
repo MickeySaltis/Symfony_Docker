@@ -15,7 +15,7 @@ DATABASE_URL="mysql://user:psw@db:3306/database?serverVersion=5.7=8&charset=utf8
 ```
 4. Créer la base de donnée
 ```
-docker exec -it www_docker_symfony bash
+docker exec -it www bash
 cd project
 php bin/console doctrine:database:create
 ```
