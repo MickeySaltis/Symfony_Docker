@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: db 
+    restart: on-failure
+    volumes:
+      - db-data:/var/lib/mariadb
+    env_file:
+      - .env
+    networks:
+      - dev 
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: on-failure
+    depends_on:
+      - db 
+    ports:
+      - 8080:80
+    env_file:
+      - .env
+    networks:
+      - dev 
+
+  www:
+    build: php/
+    container_name: www
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www
+      - ./php/vhosts:/etc/apache2/sites-enabled
+    restart: on-failure
+    networks:
+      - dev 
+
+networks:
+  dev:
+
+volumes:
+  db-data:
