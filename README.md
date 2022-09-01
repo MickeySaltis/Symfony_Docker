@@ -1,5 +1,9 @@
 # Symfony_Docker
 
+0. Cloner l'environnement
+```
+git clone https://github.com/MickeySaltis/Symfony_Docker
+```
 1. Contruire les images + Démarrage des containers
 ``` 
 docker-compose up --build
