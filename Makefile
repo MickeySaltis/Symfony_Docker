@@ -29,3 +29,21 @@ symfonyMigration:
 
 symfonyMigrate:
 	php bin/console doctrine:migrations:migrate
+	
+symfonyController:
+	php bin/console make:controller
+
+symfonyForm:
+	php bin/console make:form
+
+symfonyRouter:
+	php bin/console debug:router
+
+symfonyEncore:
+	composer require symfony/webpack-encore-bundle
+
+symfonyNpm:
+	npm install
+
+symfonyUpRecipe:
+	composer recipes:update
