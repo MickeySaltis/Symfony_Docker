@@ -24,6 +24,12 @@ symfonyDB:
 symfonyEntity:
 	php bin/console make:entity
 
+symfonyUser:
+	php bin/console make:user
+
+symfonyAuth:
+	php bin/console make:auth
+
 symfonyMigration:
 	php bin/console make:migration
 
